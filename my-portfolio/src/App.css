@@ -1,0 +1,211 @@
+/* App.css */
+
+/* App.css */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Helvetica', sans-serif;
+  background-color: #000; /* Assuming a dark theme */
+  color: #fff;
+}
+
+/* Full-screen layout */
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+/* Large text styles */
+.large-text {
+  font-size: 6rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* Hamburger menu icon */
+.hamburger-menu {
+  position: fixed;
+  top: 1rem;
+  right: 1.5rem;
+  cursor: pointer;
+  z-index: 1000; /* Ensure it's above other content */
+}
+
+/* Menu items hidden by default */
+.menu-items {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 250px;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9); /* Semi-transparent black */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Show menu when active */
+.menu-items.active {
+  transform: translateX(0);
+}
+
+/* Menu item styling */
+.menu-item {
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 1rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #04c;
+  }
+}
+
+/* Smaller text under the large text */
+.small-text {
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+/* Reset some basic elements */
+html, body, #root, .App {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Set up some basic styling */
+body {
+  font-family: 'Arial', sans-serif; /* You can choose your preferred font */
+  line-height: 1.6;
+  color: #333; /* Dark grey text color for readability */
+  background-color: #f4f4f4; /* Light grey background */
+}
+
+/* Style the main navigation */
+nav {
+  background: #333; /* Dark background for the nav bar */
+  color: white;
+  padding: 1rem 0; /* Add some padding above and below the nav links */
+  margin-bottom: 1rem; /* Separate the nav bar from the rest of the content */
+}
+
+nav ul {
+  list-style: none; /* Remove bullet points from nav items */
+  padding: 0;
+  display: flex; /* Use flexbox for horizontal layout */
+  justify-content: center; /* Center nav items */
+}
+
+nav ul li {
+  margin: 0 1rem; /* Add some space between nav items */
+}
+
+nav a {
+  color: white; /* White text color for links */
+  text-decoration: none; /* Remove underline from links */
+  font-weight: bold; /* Make the text a bit heavier */
+}
+
+/* Active state for nav links */
+.active {
+  border-bottom: 2px solid #eaeaea; /* Add an underline effect to the active nav item */
+}
+
+/* Basic styling for content sections */
+section {
+  padding: 1rem 5%; /* Add padding around content */
+}
+
+/* Footer styling */
+footer {
+  background: #333; /* Footer background to match nav */
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Add more styles as per your design requirements */
+.container {
+  padding: 2rem;
+  color: white;
+}
+
+.container h1 {
+  color: #fff;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.container p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.container form {
+  max-width: 500px;
+  margin: auto;
+}
+
+.container input,
+.container textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: none;
+  border-radius: 5px;
+}
+
+.container button {
+  padding: 0.7rem 2rem;
+  background: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.container button:hover {
+  background: #555;
+}
+
+/* Specific styles for portfolio items */
+.portfolio-items {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.portfolio-item {
+  background: #444;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 5px;
+  color: white;
+  width: calc(33% - 2rem); /* Three items per row */
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+  .portfolio-item {
+    width: calc(50% - 2rem); /* Two items per row on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .portfolio-item {
+    width: 100%; /* Full width on very small screens */
+  }
+}
