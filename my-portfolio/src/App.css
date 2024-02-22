@@ -209,3 +209,166 @@ footer {
     width: 100%; /* Full width on very small screens */
   }
 }
+
+/* Portfolio Page Styles */
+.portfolio-container {
+  padding: 2rem;
+}
+
+.portfolio-header {
+  text-align: center;
+  margin-bottom: 2rem; /* Space between text and project cards */
+}
+
+.portfolio-header h1 {
+  color: #333; /* Darker text for better visibility */
+  margin-bottom: 0.5rem;
+}
+
+.portfolio-header p {
+  color: #555; /* Slightly lighter text for the description */
+  margin-bottom: 1rem;
+}
+
+/* Scrolling system for projects */
+.project-scroll-container {
+  display: flex;
+  justify-content: center; /* Center flex items horizontally */
+  overflow-x: auto; /* Enables horizontal scrolling */
+  padding-bottom: 2rem; /* Space for scrollbar */
+}
+
+.project-card {
+  flex: none; /* Do not grow or shrink */
+  width: 300px; /* Larger width for each project card */
+  height: 400px; /* Larger height for each project card */
+  margin-right: 1rem;
+  background-color: #eaeaea; /* Light background for the card */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* More pronounced shadow for depth */
+  padding: 1rem; /* Padding inside the cards */
+  text-align: left; /* Align text to the left */
+  display: flex;
+  flex-direction: column; /* Stack card content vertically */
+  justify-content: space-between; /* Space out the card content */
+}
+
+.project-card h3 {
+  color: #333; /* Darker text for project name */
+}
+
+.project-card p {
+  color: #555; /* Slightly lighter text for project description */
+}
+
+.project-card a {
+  color: #0066cc; /* Color for the GitHub link */
+  text-decoration: none; /* No underline */
+  font-weight: bold; /* Make the link bold */
+}
+
+/* ... other styles ... */
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+  .project-card {
+    width: 80%; /* Full width on smaller screens */
+    margin: 1rem auto; /* Center the cards with auto margins */
+  }
+}
+
+/*Contact*/
+.contact-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 50px;
+  background: white;
+  color: #333;
+  font-family: 'Arial', sans-serif;
+}
+
+.contact-content, .contact-form-container {
+  flex-basis: 50%;
+  padding: 20px;
+}
+
+.contact-content {
+  text-align: right;
+  padding-right: 60px; /* Adjust the padding to ensure text does not touch the divider */
+}
+
+.contact-content h1 {
+  margin-bottom: 0.5rem;
+  color: #000;
+  font-size: 2.5rem;
+}
+
+.contact-content p {
+  margin-bottom: 0.5rem;
+}
+
+.contact-content a {
+  color: #2979ff;
+  text-decoration: none;
+}
+
+.divider {
+  height: 70%;
+  width: 1px;
+  background-color: #000;
+  margin: 0 30px; /* Space between divider and content */
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contact-form input, .contact-form textarea {
+  border: 2px solid #ccc;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.contact-form button {
+  padding: 15px 30px;
+  margin-top: 20px;
+  border: none;
+  background-color: #2979ff;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contact-content {
+    align-items: center; /* Aligns text to the center on smaller screens */
+    text-align: center; /* Text is centered on smaller screens */
+  }
+  
+  .contact-content, .contact-form-container {
+    flex-basis: 100%;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .contact-content {
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers vertically in the container */
+    align-items: flex-end; /* Aligns text to the right */
+    padding: 20px;
+    text-align: right; /* Keeps the text right-aligned */
+  }
+
+  .divider {
+    align-self: stretch;
+    height: 1px;
+    width: auto;
+    margin: 20px 0;
+  }
+}
