@@ -23,10 +23,10 @@ function Contact() {
   return (
     <div className="contact-page">
       <div className="contact-content">
-        <h1>Let's chat.</h1>
+        <h1>Contact.</h1>
         <p>Tell me about your project.</p>
-        <p>Let's create something together 👋</p>
-        <p><a href="mailto:framesmillion@gmail.com">framesmillion@gmail.com</a></p>
+        <p>Test space 👋</p>
+        <p><a href="mailto:framesmillion@gmail.com">testemail@gmail.com</a></p>
       </div>
       <div className="divider"></div>
       <div className="contact-form-container">
