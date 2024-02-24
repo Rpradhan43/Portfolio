@@ -21,6 +21,9 @@ function Header() {
         <Link to="/portfolio" className="menu-item" onClick={toggleMenu}>
           Portfolio
         </Link>
+        <Link to="/resume" className="menu-item" onClick={toggleMenu}>
+          Resume
+        </Link>
         <Link to="/contact" className="menu-item" onClick={toggleMenu}>
           Contact
         </Link>
