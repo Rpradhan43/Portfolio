@@ -1,13 +1,18 @@
 import React, { useState } from 'react';
-import '../App.css'; // Make sure to create a Contact.css file for styles
+import emailjs from 'emailjs-com';
+import '../App.css'; // Assuming your CSS file is correctly linked
 
 function Contact() {
   const [formData, setFormData] = useState({
-    fullName: '',
+    from_name: '',
     email: '',
     subject: '',
     message: '',
   });
+
+  const serviceID = 'rajapradhanportfolio'; // Replace with your EmailJS service ID
+  const templateID = 'portfoliotemplate'; // Replace with your EmailJS template ID
+  const publicKey = 'Yj_tx3NJNpNhEP--y'; // Replace with your EmailJS user ID
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -16,16 +21,29 @@ function Contact() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Here you would typically send formData to your server
-    console.log(formData);
+
+    emailjs.sendForm(serviceID, templateID, event.target, publicKey)
+      .then((result) => {
+          console.log(result.text);
+          // Handle success: you can clear the form or show a success message
+          setFormData({
+            from_name: '',
+            email: '',
+            subject: '',
+            message: '',
+          });
+      }, (error) => {
+          console.log(error.text);
+          // Handle errors here, such as showing an error message
+      });
   };
 
   return (
     <div className="contact-page">
       <div className="contact-content">
         <h1>Contact Me!</h1>
-        <p>👋 Im always looking to further my opportunities.</p>
-        <p>Get in touch with me to see what lies ahead of our opportunties. </p>
+        <p>👋 I'm always looking to further my opportunities.</p>
+        <p>Get in touch with me to see what lies ahead for our opportunities.</p>
         <p><a href="mailto:rajapradhanportfolio@gmail.com">rajapradhanportfolio@gmail.com</a></p>
       </div>
       <div className="divider"></div>
@@ -33,9 +51,9 @@ function Contact() {
         <form onSubmit={handleSubmit} className="contact-form">
           <input
             type="text"
-            name="fullName"
+            name="from_name"
             placeholder="Full name*"
-            value={formData.fullName}
+            value={formData.from_name}
             onChange={handleInputChange}
             required
           />
@@ -56,12 +74,12 @@ function Contact() {
           />
           <textarea
             name="message"
-            placeholder="Message*"
+            placeholder="Your message*"
             value={formData.message}
             onChange={handleInputChange}
             required
           ></textarea>
-          <button type="submit">Get In Touch!</button>
+          <button type="submit">Send Message</button>
         </form>
       </div>
     </div>
