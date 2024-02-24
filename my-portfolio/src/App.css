@@ -1,12 +1,17 @@
 /* App.css */
 
-/* App.css */
+* {
+  box-sizing: border-box;
+}
+
 body, html {
   margin: 0;
   padding: 0;
   font-family: 'Helvetica', sans-serif;
   background-color: #000; /* Assuming a dark theme */
   color: #fff;
+  width: 100%; /* Ensuring the body and html do not exceed the viewport width */
+  overflow-x: hidden;
 }
 
 /* Full-screen layout */
@@ -17,13 +22,18 @@ body, html {
   align-items: center;
   text-align: center;
   flex-direction: column;
+  
 }
+
+
 
 /* Large text styles */
 .large-text {
   font-size: 6rem;
   font-weight: 700;
   line-height: 1.2;
+  color: #0b0b0b; /* White text color */
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
 /* Hamburger menu icon */
@@ -144,12 +154,13 @@ footer {
 }
 
 .container h1 {
-  color: #fff;
+  color: #333;
   font-size: 2.5rem;
   margin-bottom: 1rem;
 }
 
 .container p {
+  color: #333;
   font-size: 1.1rem;
   margin-bottom: 1rem;
 }
@@ -210,6 +221,43 @@ footer {
   }
 }
 
+.project-card {
+  background-color: #eaeaea; /* Light background for the card */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+  padding: 1.5rem; /* Padding inside the cards */
+  margin: 1rem; /* Margin around cards */
+  border-radius: 5px; /* Rounded corners */
+  text-align: left; /* Align text to the left */
+  width: calc(33.3% - 2rem); /* Adjust width for three items per row, minus margin */
+  min-height: 600px; /* Increase the minimum height to accommodate more content */
+  box-sizing: border-box; /* Include padding and border in the width and height */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Distribute space between items */
+  overflow: hidden; /* Hide the overflow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.project-card:hover {
+  transform: translateY(-5px); /* Lift card on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Deeper shadow on hover */
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+  .project-card {
+    width: calc(50% - 2rem); /* Two items per row on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .project-card {
+    width: 100%; /* Full width on very small screens */
+    margin-bottom: 1rem; /* Space between stacked cards */
+  }
+}
+
+
 /* Portfolio Page Styles */
 .portfolio-container {
   padding: 2rem;
@@ -223,6 +271,8 @@ footer {
 .portfolio-header h1 {
   color: #333; /* Darker text for better visibility */
   margin-bottom: 0.5rem;
+  font-family: 'Thunder';
+  font-size: 3rem;
 }
 
 .portfolio-header p {
@@ -279,13 +329,14 @@ footer {
 /*Contact*/
 .contact-page {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  padding: 50px;
-  background: white;
+  align-items: center; /* This will vertically center the content */
+  justify-content: center; /* This will horizontally center the content */
+  height: 100vh; /* This sets the height to be the full viewport height */
+  padding: 50px; /* Adjust or remove padding if it causes overflow */
   color: #333;
   font-family: 'Arial', sans-serif;
+  overflow: hidden; /* This should already prevent scrolling */
+  box-sizing: border-box; /* This ensures padding is included in the height */
 }
 
 .contact-content, .contact-form-container {
@@ -326,13 +377,22 @@ footer {
   gap: 10px;
 }
 
-.contact-form input, .contact-form textarea {
+.contact-form input,
+.contact-form textarea {
+  width: 90%; /* Adjust the width to your preference */
+  max-width: 575px; /* Lower this value to reduce the width */
+  padding: 0.5rem;
+  margin-bottom: 1rem;
   border: 2px solid #ccc;
-  padding: 15px;
   border-radius: 5px;
+  background-color: #fff; /* Ensure the background color is white for visibility */
+  color: #333; /* Text color for input */
 }
 
+/* Adjust the contact form button to align with the inputs */
 .contact-form button {
+  width: 90%; /* Match the width of the inputs */
+  max-width: 575px; /* Match the max-width of the inputs */
   padding: 15px 30px;
   margin-top: 20px;
   border: none;
@@ -342,33 +402,164 @@ footer {
   cursor: pointer;
 }
 
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .contact-form input,
+  .contact-form textarea,
+  .contact-form button {
+    width: 100%; /* Full width on smaller screens */
+    max-width: none; /* Remove max-width on smaller screens */
+  }
+}
+
+.snap-container {
+  scroll-snap-type: y mandatory; /* Vertical snapping */
+  overflow-y: scroll; /* Enable vertical scrolling */
+  height: 100vh; /* Full viewport height */
+}
+
+/* Add scroll snap section styles */
+.snap-section {
+  height: 100vh; /* Full viewport height */
+  scroll-snap-align: start; /* Snap to the start of the section */
+  width: 100%; /* Full width */
+  display: flex;
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+}
+
+/* Adjust the .container class to prevent conflicts with snapping */
+.container {
+  padding: 2rem;
+  color: white;
+  max-width: 100%; /* Prevent horizontal overflow */
+  box-sizing: border-box; /* Include padding in the element's total width and height */
+  margin: 0 auto; /* Center the container */
+}
+
+.container, .snap-container {
+  max-width: 100vw; /* Prevent containers from exceeding viewport width */
+  overflow-x: hidden; /* Hide horizontal overflow within containers */
+}
+
+/* If any specific elements are causing overflow, you may need to adjust their styles individually. For example: */
+.some-element {
+  max-width: 100%; /* Example: Limiting width */
+  overflow-x: hidden; /* Example: Hiding horizontal overflow */
+}
+
+/* Adjust the .container.home class to have flex-direction row */
+.container.home {
+  display: flex;
+  flex-direction: row; /* Line up items in a row */
+  align-items: center; /* Center items vertically */
+  justify-content: center; /* Center items horizontally */
+  text-align: left; /* Align text to the left */
+}
+
+/* Style for the image container */
+.image-container {
+  flex-basis: 50%; /* Take up half of the container space */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 2rem; /* Adjust spacing as necessary */
+}
+
+/* Style for the text container */
+.text-container {
+  flex-basis: 50%; /* Take up the other half of the container space */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start; /* Align text to the start */
+  padding-left: 2rem; /* Adjust spacing as necessary */
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
-  .contact-content {
-    align-items: center; /* Aligns text to the center on smaller screens */
-    text-align: center; /* Text is centered on smaller screens */
+  .container.home {
+    flex-direction: column; /* Stack image and text vertically on smaller screens */
   }
   
-  .contact-content, .contact-form-container {
-    flex-basis: 100%;
-    padding: 20px;
+  .image-container, .text-container {
+    flex-basis: 100%; /* Each takes full width on smaller screens */
+    padding: 1rem 0; /* Adjust spacing for stacked layout */
+  }
+}
+
+@font-face {
+  font-family: 'Thunder';
+  src: url('./Suissnord.otf') format('opentype'); /* Replace with the path to your font file */
+  font-weight: normal;
+  font-style: normal;
+}
+
+.container.home h1 {
+  font-family: 'Thunder';
+  font-size: 4rem;
+  
+}
+
+.text-container p {
+  color: rgb(230, 228, 228);
+}
+
+.name-container h1 {
+  margin: 0; /* Remove default margin */
+  display: block; /* Each h1 will take up a full block, causing the next one to appear underneath */
+  line-height: 1; /* Adjust line height to control space between lines */
+  padding-bottom: 0.5rem;
+  letter-spacing: 0.08em;
+  color: rgb(230, 228, 228);
+}
+
+.first-section {
+  background-image: url('./starsbackground.jpg'); /* Replace with the path to your background image */
+  background-size: cover; /* Cover the entire section */
+  background-position: center; /* Center the background image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+}
+
+.hamburger-menu {
+  background-color: rgba(255, 255, 255, 0.5); /* White with transparency */
+  border-radius: .5px; /* Optional: for rounded corners */
+  padding: 1px; /* Adjust size as needed */
+  color: black;
+}
+
+/* Styles for the About Me section */
+.container.about-me {
+  color: #fff; /* Adjust text color as needed */
+  max-width: 800px; /* Set a max-width for the content if desired */
+  margin: auto; /* Center the container in the section */
+  padding: 2rem;
+  text-align: left; /* Align text to the left */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start; /* Align items to the start (left) */
+}
+
+.container.about-me h2 {
+  font-family: 'Thunder';
+  font-size: 4rem;
+  color: #333;
+  margin-bottom: 0rem;
+}
+
+.container.about-me p {
+  font-size: 1.2rem; /* Adjust paragraph font size as needed */
+  line-height: 1.6; /* Adjust line height for readability */
+  margin-bottom: 1rem; /* Space between paragraphs */
+}
+
+/* ... other styles ... */
+
+/* Responsive Design adjustments for the About Me section */
+@media (max-width: 768px) {
+  .container.about-me {
     text-align: center;
-  }
-
-  .contact-content {
-    flex-basis: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Centers vertically in the container */
-    align-items: flex-end; /* Aligns text to the right */
-    padding: 20px;
-    text-align: right; /* Keeps the text right-aligned */
-  }
-
-  .divider {
-    align-self: stretch;
-    height: 1px;
-    width: auto;
-    margin: 20px 0;
+    align-items: center; /* Center items on smaller screens */
   }
 }

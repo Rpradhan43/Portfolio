@@ -23,10 +23,10 @@ function Contact() {
   return (
     <div className="contact-page">
       <div className="contact-content">
-        <h1>Contact.</h1>
-        <p>Tell me about your project.</p>
-        <p>Test space 👋</p>
-        <p><a href="mailto:framesmillion@gmail.com">testemail@gmail.com</a></p>
+        <h1>Contact Me!</h1>
+        <p>👋 Im always looking to further my opportunities.</p>
+        <p>Get in touch with me to see what lies ahead of our opportunties. </p>
+        <p><a href="mailto:rajapradhanportfolio@gmail.com">rajapradhanportfolio@gmail.com</a></p>
       </div>
       <div className="divider"></div>
       <div className="contact-form-container">
@@ -56,12 +56,12 @@ function Contact() {
           />
           <textarea
             name="message"
-            placeholder="Tell us more about your project*"
+            placeholder="Message*"
             value={formData.message}
             onChange={handleInputChange}
             required
           ></textarea>
-          <button type="submit">Send message</button>
+          <button type="submit">Get In Touch!</button>
         </form>
       </div>
     </div>

@@ -4,9 +4,9 @@ import '../App.css';
 // Example project data
 const projects = [
   {
-    name: 'Project 1',
-    description: 'A short description of Project 1.',
-    githubLink: 'https://github.com/user/project1'
+    name: 'Planetary Visualizer',
+    description: '"Planetary Visualizer" is an interactive web application designed to bring the cosmos closer to home. This project leverages cutting-edge web technologies to render detailed and immersive visualizations of various planets in our solar system. Users can explore the dynamic and beautifully crafted 3D models of planets and learn about their key features. The application aims to provide an educational and engaging experience for astronomy enthusiasts and casual learners alike, promoting an appreciation for the wonders of our planetary neighbors.',
+    githubLink: 'https://github.com/Rpradhan43/Planetary-Visualizer'
   },
   {
     name: 'Project 2',
