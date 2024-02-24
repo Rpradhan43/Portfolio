@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/Portfolio/static/css/main.eacd281f.css",
-    "main.js": "/Portfolio/static/js/main.9d11c7b0.js",
+    "main.js": "/Portfolio/static/js/main.98e631a0.js",
     "static/media/starsbackground.jpg": "/Portfolio/static/media/starsbackground.e7b408ba64fc14a7317b.jpg",
     "static/media/Suissnord.otf": "/Portfolio/static/media/Suissnord.6b8446391aa5523ffaac.otf",
     "index.html": "/Portfolio/index.html",
     "main.eacd281f.css.map": "/Portfolio/static/css/main.eacd281f.css.map",
-    "main.9d11c7b0.js.map": "/Portfolio/static/js/main.9d11c7b0.js.map"
+    "main.98e631a0.js.map": "/Portfolio/static/js/main.98e631a0.js.map"
   },
   "entrypoints": [
     "static/css/main.eacd281f.css",
-    "static/js/main.9d11c7b0.js"
+    "static/js/main.98e631a0.js"
   ]
 }
