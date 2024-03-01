@@ -482,12 +482,13 @@ footer {
 }
 
 /* Style for the image container */
-.image-container {
-  flex-basis: 50%; /* Take up half of the container space */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-right: 2rem; /* Adjust spacing as necessary */
+.image-container img {
+  /* Assuming your image is square, this will make it round */
+  border-radius: 50%;
+  /* Other styles */
+  width: 450px; /* or any other size */
+  height: 450px; /* this should be the same as width to maintain aspect ratio */
+  object-fit: cover; /* this will make sure to cover the area without stretching */
 }
 
 /* Style for the text container */

@@ -1,9 +1,9 @@
 import React from 'react';
 import '../App.css';
-import yourImage from '../textimage.png'; // Replace with the path to your image file
-import backgroundImage from '../starsbackground.jpg'; // Replace with the path to your background image file
-import linkedInLogo from '../LinkedIn.png'; // Replace with the path to your LinkedIn logo file
-import githubLogo from '../Github.png'; // Replace with the path to your GitHub logo file
+import yourImage from '../raja.jpg';
+import backgroundImage from '../starsbackground.jpg'; 
+import linkedInLogo from '../LinkedIn.png';
+import githubLogo from '../Github.png';
 
 function Home() {
   // Inline style for the background image of the first section
@@ -26,7 +26,7 @@ function Home() {
         </a>
       </div>
 
-      {/* First Section: Hero Image */}
+      {/* First Section: Image */}
       <section className="snap-section" style={firstSectionStyle}>
         <div className="container home">
           <div className="image-container">
